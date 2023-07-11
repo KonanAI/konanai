@@ -1,4 +1,4 @@
-### KonanAI
+KonanAI
 =======================================
 
 This repository is under development to improve structure and documentation.
