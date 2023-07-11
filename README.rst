@@ -1,9 +1,8 @@
-Template for the Read the Docs tutorial
+### KonanAI
 =======================================
 
-This GitHub template includes fictional Python library
-with some basic Sphinx docs.
+This repository is under development to improve structure and documentation.
 
-Read the tutorial here:
+Read the starting reference tutorial here:
 
 https://docs.readthedocs.io/en/stable/tutorial/
