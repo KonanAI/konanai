@@ -1,0 +1,12 @@
+language: python
+python:
+  - "3.10"
+
+install:
+  - pip install pytest pytest-cov codecov
+
+script:
+  - pytest --doctest-modules --cov-report term-missing --cov-branch --cov-append --cov=./src
+
+after_success:
+  - codecov
