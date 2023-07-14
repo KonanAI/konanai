@@ -1,3 +1,15 @@
+"""
+Module `timeframe` defines a Time class that represents time in either seconds or frames.
+
+This module provides the following class:
+- `Time`: Represents time in seconds (float) or frames (int). Provides methods to perform arithmetic operations,
+  comparison, and conversions between the two units.
+
+Classes:
+    Time: A class used to represent time in seconds or frames and perform various operations.
+
+This module is part of the `tap` package.
+"""
 
 from typing import Union
 
@@ -22,7 +34,7 @@ class Time:
         if unit == "second":
             self._second = data
             self._frame = self._convert_seconds_to_frames(data)
-        else: # unit == "frame"
+        else:  # unit == "frame"
             self._frame = data
             self._second = self._convert_frames_to_seconds(data)
 
