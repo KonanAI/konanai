@@ -1,5 +1,5 @@
 import pytest
-from konanai.src.tap.classes.timeframe import Time
+from tap.classes.timeframe import Time
 
 
 def test_time_init_with_seconds():
