@@ -1,15 +1,19 @@
 """
-Module `timeframe` defines a Time class that represents time in either seconds or frames.
+Module `timeframe` defines a Time class that represents time in either seconds 
+or frames.
 
 This module provides the following class:
-- `Time`: Represents time in seconds (float) or frames (int). Provides methods to perform arithmetic operations,
-  comparison, and conversions between the two units.
+- `Time`: Represents time in seconds (float) or frames (int). It provides 
+  methods for arithmetic operations, comparison, and conversions between 
+  the two units.
 
 Classes:
-    Time: A class used to represent time in seconds or frames and perform various operations.
+    Time: A class used to represent time in seconds or frames and perform 
+    various operations.
 
 This module is part of the `tap` package.
 """
+
 
 from typing import Union
 
