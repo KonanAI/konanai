@@ -20,5 +20,6 @@ jobs:
         pip install pytest pytest-cov pylint
     - name: Analysing the code with pylint
       run: |
+        export PYTHONPATH=$PYTHONPATH:$(pwd)/src
         pylint ./src
         pylint --disable=no-member,W0621,W0212,W0104,C0114,C0115,C0116 ./tests
