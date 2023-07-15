@@ -1,19 +1,18 @@
 """
-Module `timeframe` defines a Time class that represents time in either seconds 
+Module `timeframe` defines a Time class that represents time in seconds 
 or frames.
 
 This module provides the following class:
-- `Time`: Represents time in seconds (float) or frames (int). It provides 
-  methods for arithmetic operations, comparison, and conversions between 
-  the two units.
+- `Time`: Represents time in seconds (float) or frames (int). It provides
+methods for arithmetic operations, comparison, and conversions between 
+the two units.
 
 Classes:
-    Time: A class used to represent time in seconds or frames and perform 
-    various operations.
+    Time: A class used to represent time in seconds or frames and perform
+various operations.
 
 This module is part of the `tap` package.
 """
-
 
 from typing import Union
 
@@ -28,8 +27,9 @@ class Time:
         """
         Initialize a Time object with a time value and unit.
 
-        :param Union[int, float] data: Time value in either seconds (float) or frames (int).
-        :param str unit: Unit of the time value ('second' or 'frame'), default is 'second'.
+        :param data: Time value in either seconds (float) or frames (int).
+        :param unit: Unit of the time value ('second' or 'frame').
+        Default is 'second'.
         :raise ValueError: If an invalid unit is provided.
         :raise TypeError: If an incorrect type for the data is provided.
         """
@@ -53,7 +53,7 @@ class Time:
         return Time(self._second + other._second, "second")
 
     def __sub__(self, other: "Time") -> "Time":
-        """Return the result of subtracting another Time object from this one."""
+        """Return result of subtracting another Time object from this one."""
         return Time(self._second - other._second, "second")
 
     def __mul__(self, scalar: Union[int, float]) -> "Time":
@@ -77,7 +77,7 @@ class Time:
         return self._second < other._second
 
     def __le__(self, other: "Time") -> bool:
-        """Return True if this time is less than or equal to the other time."""
+        """Return True if this time is less or equal to the other time."""
         return self._second <= other._second
 
     def __gt__(self, other: "Time") -> bool:
@@ -85,7 +85,7 @@ class Time:
         return self._second > other._second
 
     def __ge__(self, other: "Time") -> bool:
-        """Return True if this time is greater than or equal to the other time."""
+        """Return True if this time is greater or equal to other time."""
         return self._second >= other._second
 
     def __eq__(self, other: "Time") -> bool:
@@ -120,18 +120,19 @@ class Time:
         """
         Validate the input data and unit.
 
-        :param Union[int, float] data: Time value.
-        :param str unit: Unit of the time value.
+        :param data: Time value.
+        :param unit: Unit of the time value.
         :raise ValueError: If an invalid unit is provided.
-        :raise TypeError: If an incorrect type for the data is provided.
+        :raise TypeError: If incorrect type for the data is provided.
         """
         if unit not in self.UNIT_TYPE:
             raise ValueError(
                 "Invalid unit. Use 'second' for seconds or 'frame' for frames."
             )
         if not isinstance(data, self.UNIT_TYPE[unit]):
+            type_name = self.UNIT_TYPE[unit].__name__
             raise TypeError(
-                f"Expected a {self.UNIT_TYPE[unit].__name__} for {unit}, got {type(data).__name__}."
+                f"Expected a {type_name} for {unit}, got {type(data).__name__}."
             )
 
     @classmethod
