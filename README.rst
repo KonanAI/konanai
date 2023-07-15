@@ -8,8 +8,8 @@ Read the starting reference tutorial here:
 https://docs.readthedocs.io/en/stable/tutorial/
 
 
-For KonanAI Developers
-======================
+Developer Resources
+=======================================
 
 This section is dedicated to KonanAI developers and contains crucial tools and platforms that are regularly used during the development process. Each of these tools serves a unique purpose in maintaining the quality and efficiency of our codebase.
 
