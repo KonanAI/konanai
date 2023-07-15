@@ -42,6 +42,48 @@ class Time:
             self._frame = data
             self._second = self._convert_frames_to_seconds(data)
 
+    def _validate_input(self, data: Union[int, float], unit: str) -> None:
+        """
+        Validate the input data and unit.
+
+        :param data: Time value.
+        :param unit: Unit of the time value.
+        :raise ValueError: If an invalid unit is provided.
+        :raise TypeError: If incorrect type for the data is provided.
+        """
+        if unit not in self.UNIT_TYPE:
+            raise ValueError(
+                "Invalid unit. Use 'second' for seconds or 'frame' for frames."
+            )
+        if not isinstance(data, self.UNIT_TYPE[unit]):
+            type_name = self.UNIT_TYPE[unit].__name__
+            data_name = type(data).__name__
+            raise TypeError(
+                f"Expected a {type_name} for {unit}, got {data_name}."
+            )
+
+    @classmethod
+    def _convert_seconds_to_frames(cls, second: float) -> int:
+        """
+        Convert seconds to frames.
+
+        :param float second: Time value in seconds.
+        :return: Time value in frames.
+        :rtype: int
+        """
+        return round(second * cls.FRAMES_PER_SECOND)
+
+    @classmethod
+    def _convert_frames_to_seconds(cls, frame: int) -> float:
+        """
+        Convert frames to seconds.
+
+        :param int frame: Time value in frames.
+        :return: Time value in seconds.
+        :rtype: float
+        """
+        return frame / cls.FRAMES_PER_SECOND
+
     def __add__(self, other: "Time") -> "Time":
         """
         Return the result of adding another Time object to this one.
@@ -115,48 +157,6 @@ class Time:
         :rtype: int
         """
         return self._frame
-
-    def _validate_input(self, data: Union[int, float], unit: str) -> None:
-        """
-        Validate the input data and unit.
-
-        :param data: Time value.
-        :param unit: Unit of the time value.
-        :raise ValueError: If an invalid unit is provided.
-        :raise TypeError: If incorrect type for the data is provided.
-        """
-        if unit not in self.UNIT_TYPE:
-            raise ValueError(
-                "Invalid unit. Use 'second' for seconds or 'frame' for frames."
-            )
-        if not isinstance(data, self.UNIT_TYPE[unit]):
-            type_name = self.UNIT_TYPE[unit].__name__
-            data_name = type(data).__name__
-            raise TypeError(
-                f"Expected a {type_name} for {unit}, got {data_name}."
-            )
-
-    @classmethod
-    def _convert_seconds_to_frames(cls, second: float) -> int:
-        """
-        Convert seconds to frames.
-
-        :param float second: Time value in seconds.
-        :return: Time value in frames.
-        :rtype: int
-        """
-        return round(second * cls.FRAMES_PER_SECOND)
-
-    @classmethod
-    def _convert_frames_to_seconds(cls, frame: int) -> float:
-        """
-        Convert frames to seconds.
-
-        :param int frame: Time value in frames.
-        :return: Time value in seconds.
-        :rtype: float
-        """
-        return frame / cls.FRAMES_PER_SECOND
 
     def __str__(self) -> str:
         """
