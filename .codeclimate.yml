@@ -48,6 +48,8 @@ plugins:
       ignore: E203
   bandit:
     enabled: true
+    config:
+      skips: B101
   fixme:
     enabled: true
   coverage:
