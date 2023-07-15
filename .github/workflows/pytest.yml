@@ -27,7 +27,7 @@ jobs:
     - name: Run pytest with coverage
       run: |
         coverage erase
-        pytest --doctest-modules --cov-report term-missing --cov-report xml --cov-branch --cov-append --cov=src
+        pytest --doctest-modules --cov-report term-missing --cov-report xml --cov-branch --cov-append --cov=src --ignore='**/__init__.py'
     - name: After build
       run: ./cc-test-reporter after-build --exit-code $?
       env:
