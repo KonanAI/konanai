@@ -106,24 +106,18 @@ def test_division_by_scalar():
     assert result.second == 1.0
 
 
-def test_division_by_zero():
+def test_division_exceptions():
     # Arrange
     time_obj = Time(2.0, "second")
-    scalar = 0.0
+    zero_scalar = 0.0
+    non_int_scalar = 1.5
 
     # Act & Assert
     with pytest.raises(ZeroDivisionError):
-        time_obj / scalar
+        time_obj / zero_scalar
 
-
-def test_division_with_non_integer_result():
-    # Arrange
-    time_obj = Time(2.0, "second")
-    scalar = 1.5
-
-    # Act & Assert
     with pytest.raises(ValueError):
-        time_obj / scalar
+        time_obj / non_int_scalar
 
 
 def test_less_than_operator():
@@ -198,49 +192,33 @@ def test_inequality_operator():
     assert result
 
 
-def test_second_property():
+def test_time_properties():
     # Arrange
-    data = 1.0
-    unit = "second"
-    time_obj = Time(data, unit)
+    second_data = 1.0
+    second_unit = "second"
+    second_time_obj = Time(second_data, second_unit)
+
+    frame_data = 100
+    frame_unit = "frame"
+    frame_time_obj = Time(frame_data, frame_unit)
 
     # Act
-    result = time_obj.second
+    second_result = second_time_obj.second
+    frame_result = frame_time_obj.frame
 
     # Assert
-    assert result == data
+    assert second_result == second_data
+    assert frame_result == frame_data
 
 
-def test_frame_property():
-    # Arrange
-    data = 100
-    unit = "frame"
-    time_obj = Time(data, unit)
-
-    # Act
-    result = time_obj.frame
-
-    # Assert
-    assert result == data
-
-
-def test_str_representation():
+def test_string_repr_presentations():
     # Arrange
     time_obj = Time(1.0, "second")
 
     # Act
-    result = str(time_obj)
+    str_result = str(time_obj)
+    repr_result = repr(time_obj)
 
     # Assert
-    assert result == "Time(second=1.0, frame=100)"
-
-
-def test_repr_representation():
-    # Arrange
-    time_obj = Time(1.0, "second")
-
-    # Act
-    result = repr(time_obj)
-
-    # Assert
-    assert result == "Time(second=1.0, frame=100)"
+    assert str_result == "Time(second=1.0, frame=100)"
+    assert repr_result == "Time(second=1.0, frame=100)"
