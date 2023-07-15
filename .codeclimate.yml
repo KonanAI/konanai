@@ -39,6 +39,15 @@ plugins:
     enabled: true
   pep8:
     enabled: true
+    config:
+      max-line-length: 88
+  flake8:
+    enabled: true
+    config:
+      max-line-length: 88
+      ignore: E203
+  bandit:
+    enabled: true
   fixme:
     enabled: true
   coverage:
