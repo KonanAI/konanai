@@ -23,7 +23,7 @@ Please note that all contributions to this project are accepted under the terms 
 
 ## Developer Certificate of Origin
 
-It is required that all contributors adhere to the Developer Certificate of Origin (DCO). The DCO is a declaration that you have the legal right to make the contribution under the project's license, and you agree to do so under the terms of the DCO. 
+It is required that all contributors adhere to the Developer Certificate of Origin (DCO). The DCO is a declaration that you have the legal right to make the contribution under the project's license, and you agree to do so under the terms of the DCO.
 
 The full text of the DCO is available at [developercertificate.org](https://developercertificate.org/).
 
@@ -45,7 +45,7 @@ When filing an issue, please provide a concise description of the issue, relevan
 
 ## Coding Style
 
-Contributions must adhere to the [PEP 8](https://pep8.org/), the official style guide for Python code. 
+Contributions must adhere to the [PEP 8](https://pep8.org/), the official style guide for Python code.
 
 Please note the following:
 

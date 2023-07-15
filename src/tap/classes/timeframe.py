@@ -1,10 +1,10 @@
 """
-Module `timeframe` defines a Time class that represents time in seconds 
+Module `timeframe` defines a Time class that represents time in seconds
 or frames.
 
 This module provides the following class:
 - `Time`: Represents time in seconds (float) or frames (int). It provides
-methods for arithmetic operations, comparison, and conversions between 
+methods for arithmetic operations, comparison, and conversions between
 the two units.
 
 Classes:
