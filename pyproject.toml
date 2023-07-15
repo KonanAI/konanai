@@ -8,4 +8,4 @@ authors = [{name = "Graziella", email = "graziella@lumache"}]
 dynamic = ["version", "description"]
 
 [tool.pytest.ini_options]
-addopts = "--ignore=__init__.py"
+addopts = "--ignore=**/__init__.py"
