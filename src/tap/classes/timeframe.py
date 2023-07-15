@@ -131,8 +131,9 @@ class Time:
             )
         if not isinstance(data, self.UNIT_TYPE[unit]):
             type_name = self.UNIT_TYPE[unit].__name__
+            data_name = type(data).__name__
             raise TypeError(
-                f"Expected a {type_name} for {unit}, got {type(data).__name__}."
+                f"Expected a {type_name} for {unit}, got {data_name}."
             )
 
     @classmethod
