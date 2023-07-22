@@ -1,20 +1,20 @@
-.. KonanAI documentation master file, created by
-   sphinx-quickstart on Fri Jul 21 15:07:50 2023.
+.. your_project_name documentation master file, created by
+   sphinx-quickstart on ...
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
-Welcome to KonanAI's documentation!
-===================================
+Welcome to your_project_name's documentation!
+=============================================
 
 .. toctree::
    :maxdepth: 2
    :caption: Contents:
 
+   .. autodoc
 
-
-Indices and tables
-==================
-
-* :ref:`genindex`
-* :ref:`modindex`
-* :ref:`search`
+   .. modules
+   konanai/__init__
+   konanai/domains
+   konanai/empirics
+   konanai/externals
+   konanai/models
