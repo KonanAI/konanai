@@ -1,5 +1,6 @@
 # All the existing imports here
 import os
+import subprocess
 import packaging.version
 from pallets_sphinx_themes import get_version
 from pallets_sphinx_themes import ProjectLink
@@ -96,3 +97,13 @@ def github_link(name, rawtext, text, lineno, inliner, options=None, content=None
 
 def setup(app: Sphinx):
     app.add_role("gh", github_link)
+    
+    app.connect('build-finished', run_postprocess)
+
+def run_postprocess(app, exception):
+    # The script and html directory paths
+    script_path = os.path.join(os.path.dirname(__file__), "postprocess.py")
+    html_dir_path = os.path.join(app.outdir)
+    
+    # Call the postprocess script on the html directory
+    subprocess.check_call([sys.executable, script_path, html_dir_path])
