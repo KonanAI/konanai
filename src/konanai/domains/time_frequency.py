@@ -1,3 +1,4 @@
+
 from typing import Callable, Optional, Type, TypeVar
 
 
@@ -12,19 +13,20 @@ T = TypeVar("T", bound="Spectrogram")
 
 class Spectrogram:
     """
-    Class to represent and manipulate spectrogram data.
+    Represents a Spectrogram, a visual representation of the spectrum
+    of frequencies of sound as they vary with time.
 
-    TODO: Replace this with a more specific class description.
+    Encapsulates spectrogram data and provides methods for initialization
+    from raw data or waveform files and objects, with optional custom
+    transformations.
     """
 
     def __init__(self, data: torch.Tensor) -> None:
         """
-        Initialize a Spectrogram object.
+        Initializes a Spectrogram instance with given data.
 
         Args:
-            data (torch.Tensor): The spectrogram data.
-
-        TODO: Replace this with a more specific method description.
+            data (torch.Tensor): Tensor representing the spectrogram data.
         """
         pass
 
@@ -35,16 +37,15 @@ class Spectrogram:
         custom_transform: Optional[Callable[..., torch.Tensor]] = None,
     ) -> T:
         """
-        Create a Spectrogram object from a waveform file.
+        Creates a Spectrogram instance from a waveform file.
 
         Args:
-            filename (str): Path to the file.
-            custom_transform (Callable[..., torch.Tensor], optional): Custom transform function.
+            filename (str): Path to the waveform file.
+            custom_transform (Callable[..., torch.Tensor], optional): Custom
+                transform function to apply to the waveform data.
 
         Returns:
-            T: A Spectrogram object.
-
-        TODO: Replace this with a more specific method description.
+            T: A Spectrogram instance.
         """
         pass
 
@@ -55,31 +56,30 @@ class Spectrogram:
         transform: Optional[Callable[..., torch.Tensor]] = None,
     ) -> T:
         """
-        Create a Spectrogram object from a Waveform object.
+        Creates a Spectrogram instance from a Waveform object.
 
         Args:
-            waveform (Waveform): The waveform object.
-            transform (Callable[..., torch.Tensor], optional): Transform function.
+            waveform (Waveform): The waveform object to create the
+                spectrogram from.
+            transform (Callable[..., torch.Tensor], optional): Transform
+                function to apply to the waveform data.
 
         Returns:
-            T: A Spectrogram object.
-
-        TODO: Replace this with a more specific method description.
+            T: A Spectrogram instance.
         """
         pass
 
     @staticmethod
     def _default_transform(waveform_data: torch.Tensor) -> torch.Tensor:
         """
-        Apply the default transform to the waveform data.
+        Applies a default transform to waveform data. This function can be
+        overridden with custom transformations.
 
         Args:
-            waveform_data (torch.Tensor): The waveform data.
+            waveform_data (torch.Tensor): Input waveform data.
 
         Returns:
-            torch.Tensor: The transformed data.
-
-        TODO: Replace this with a more specific method description.
+            torch.Tensor: Transformed waveform data.
         """
         pass
 
@@ -98,25 +98,31 @@ class Spectrogram:
         onesided: bool = True,
     ) -> torch.Tensor:
         """
-        Compute the short-time Fourier transform (STFT) of the waveform data.
+        Computes the short-time Fourier transform (STFT) of the waveform data.
 
         Args:
-            waveform_data (torch.Tensor): The waveform data.
-            pad (int, optional): Amount of padding. Defaults to 0.
-            custom_window_fn (Optional[Callable[..., torch.Tensor]], optional): Custom window function. Defaults to None.
-            n_fft (int, optional): FFT size. Defaults to 640.
-            hop_length (int, optional): Hop size. Defaults to 160.
+            waveform_data (torch.Tensor): Input waveform data.
+            pad (int, optional): Amount of padding applied to the signal.
+                Defaults to 0.
+            custom_window_fn (Optional[Callable[..., torch.Tensor]], optional):
+                Custom function used to generate window frames.
+                Defaults to None.
+            n_fft (int, optional): Size of FFT. Defaults to 640.
+            hop_length (int, optional): Length of hop between STFT windows.
+                Defaults to 160.
             win_length (int, optional): Window size. Defaults to 640.
-            power (Optional[float], optional): Power for magnitude spectrogram. Defaults to None.
-            normalized (bool, optional): Whether to normalize. Defaults to False.
-            center (bool, optional): Whether to center. Defaults to False.
+            power (Optional[float], optional): Exponent for the magnitude
+                spectrogram. Defaults to None.
+            normalized (bool, optional): Whether the resulting spectrogram is
+                normalized. Defaults to False.
+            center (bool, optional): Whether to pad input signal for centered
+                frames. Defaults to False.
             pad_mode (str, optional): Padding mode. Defaults to "reflect".
-            onesided (bool, optional): Whether to return a one-sided spectrogram. Defaults to True.
+            onesided (bool, optional): Whether to return a one-sided
+                spectrogram. Defaults to True.
 
         Returns:
-            torch.Tensor: The spectrogram.
-
-        TODO: Replace this with a more specific method description.
+            torch.Tensor: Spectrogram of input waveform.
         """
         pass
 
@@ -129,42 +135,46 @@ class Spectrogram:
         requires_grad=False,
     ) -> torch.Tensor:
         """
-        Create a Hann window.
+        Creates a Hann window of a given length.
 
         Args:
-            window_length (int): The window length.
-            periodic (bool, optional): Whether the window is periodic. Defaults to True.
-            dtype (optional): The desired data type of returned tensor. If specified, the input tensor is casted to dtype before the operation is performed. Defaults to None.
-            device (optional): The desired device of returned tensor. If specified, the input tensor is casted to device before the operation is performed. Defaults to None.
-            requires_grad (bool, optional): If autograd should record operations on the returned tensor. Defaults to False.
+            window_length (int): The length of the window.
+            periodic (bool, optional): Whether the window is periodic.
+                Defaults to True.
+            dtype (optional): Desired data type of returned tensor. If
+                specified, the input tensor is casted to dtype before the
+                operation is performed. Defaults to None.
+            device (optional): Desired device of returned tensor. If specified,
+                the input tensor is casted to device before the operation is
+                performed. Defaults to None.
+            requires_grad (bool, optional): If autograd should record
+                operations on the returned tensor. Defaults to False.
 
         Returns:
-            torch.Tensor: The window.
-
-        TODO: Replace this with a more specific method description.
+            torch.Tensor: The Hann window.
         """
         pass
 
 
 class PowerSpectrogram(Spectrogram):
     """
-    Class to represent and manipulate power spectrogram data.
-
-    TODO: Replace this with a more specific class description.
+    Class that encapsulates power spectrogram data, inheriting from
+    the Spectrogram class. The power spectrogram is derived from the
+    spectrogram of a signal, which has been squared element-wise.
     """
 
     @staticmethod
     def _default_transform(waveform_data: torch.Tensor) -> torch.Tensor:
         """
-        Apply the default transform to the waveform data.
+        Applies a default transform to waveform data, suitable for power
+        spectrogram calculations. This function can be overridden with
+        custom transformations.
 
         Args:
-            waveform_data (torch.Tensor): The waveform data.
+            waveform_data (torch.Tensor): Input waveform data.
 
         Returns:
-            torch.Tensor: The transformed data.
-
-        TODO: Replace this with a more specific method description.
+            torch.Tensor: Transformed waveform data.
         """
         pass
 
@@ -179,21 +189,29 @@ class PowerSpectrogram(Spectrogram):
         requires_grad: bool = False,
     ) -> torch.Tensor:
         """
-        Create a Hamming window.
+        Creates a Hamming window of a given length. The Hamming window is
+        a window function that helps manage spectral leakage when
+        performing a Fourier transform on a discrete signal.
 
         Args:
-            window_length (int): The window length.
-            periodic (bool, optional): Whether the window is periodic. Defaults to True.
-            alpha (float, optional): The alpha parameter of the Hamming window. Defaults to 25/46.
-            beta (float, optional): The beta parameter of the Hamming window. Defaults to 21/46.
-            dtype (optional): The desired data type of returned tensor. If specified, the input tensor is casted to dtype before the operation is performed. Defaults to None.
-            device (optional): The desired device of returned tensor. If specified, the input tensor is casted to device before the operation is performed. Defaults to None.
-            requires_grad (bool, optional): If autograd should record operations on the returned tensor. Defaults to False.
+            window_length (int): The length of the window.
+            periodic (bool, optional): Whether the window is periodic.
+                Defaults to True.
+            alpha (float, optional): Alpha parameter of the Hamming window.
+                Defaults to 25/46.
+            beta (float, optional): Beta parameter of the Hamming window.
+                Defaults to 21/46.
+            dtype (optional): Desired data type of returned tensor. If
+                specified, the input tensor is casted to dtype before the
+                operation is performed. Defaults to None.
+            device (optional): Desired device of returned tensor. If
+                specified, the input tensor is casted to device before the
+                operation is performed. Defaults to None.
+            requires_grad (bool, optional): If autograd should record
+                operations on the returned tensor. Defaults to False.
 
         Returns:
-            torch.Tensor: The window.
-
-        TODO: Replace this with a more specific method description.
+            torch.Tensor: The Hamming window.
         """
         pass
 
@@ -212,24 +230,33 @@ class PowerSpectrogram(Spectrogram):
         onesided: bool = True,
     ) -> torch.Tensor:
         """
-        Compute the short-time Fourier transform (STFT) of the waveform data.
+        Computes the short-time Fourier transform (STFT) of the waveform data.
+        In the case of the PowerSpectrogram, the computed spectrogram is
+        raised to the given power to provide a magnitude power spectrogram.
 
         Args:
-            waveform_data (torch.Tensor): The waveform data.
-            pad (int, optional): Amount of padding. Defaults to 0.
-            custom_window_fn (Optional[Callable[..., torch.Tensor]], optional): Custom window function. Defaults to None.
-            n_fft (int, optional): FFT size. Defaults to 640.
-            hop_length (int, optional): Hop size. Defaults to 160.
+            waveform_data (torch.Tensor): Input waveform data.
+            pad (int, optional): Amount of padding applied to the signal.
+                Defaults to 0.
+            custom_window_fn (Optional[Callable[..., torch.Tensor]], optional):
+                Custom function used to generate window frames.
+                Defaults to None.
+            n_fft (int, optional): Size of FFT. Defaults to 640.
+            hop_length (int, optional): Length of hop between STFT windows.
+                Defaults to 160.
             win_length (int, optional): Window size. Defaults to 640.
-            power (float, optional): Power for magnitude spectrogram. Defaults to 2.0.
-            normalized (bool, optional): Whether to normalize. Defaults to False.
-            center (bool, optional): Whether to center. Defaults to False.
+            power (float, optional): Exponent for the magnitude
+                spectrogram, for power spectrogram this is typically 2.0.
+                Defaults to 2.0.
+            normalized (bool, optional): Whether the resulting spectrogram is
+                normalized. Defaults to False.
+            center (bool, optional): Whether to pad input signal for centered
+                frames. Defaults to False.
             pad_mode (str, optional): Padding mode. Defaults to "reflect".
-            onesided (bool, optional): Whether to return a one-sided spectrogram. Defaults to True.
+            onesided (bool, optional): Whether to return a one-sided
+                spectrogram. Defaults to True.
 
         Returns:
-            torch.Tensor: The spectrogram.
-
-        TODO: Replace this with a more specific method description.
+            torch.Tensor: Power Spectrogram of input waveform.
         """
         pass

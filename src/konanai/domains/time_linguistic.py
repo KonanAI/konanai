@@ -13,9 +13,9 @@ from ..externals import ForcedAligner, PredictiveAligner
 
 class Alignment(ABC):
     """
-    Abstract base class for different types of linguistic alignment.
-
-    TODO: Replace this with a more specific class description.
+    An abstract base class defining a blueprint for various types of
+    linguistic alignment, which is the mapping between speech and text
+    at the granularity of specific linguistic units.
     """
 
     def __init__(
@@ -24,34 +24,35 @@ class Alignment(ABC):
         unit_type: Type[LinguisticUnit],
     ) -> None:
         """
-        Initializes an `Alignment` instance.
+        Initializes an Alignment instance using a dataframe and the
+        type of linguistic unit (e.g., phoneme, word) for the alignment.
 
         Args:
-            dataframe (pandas.DataFrame): The DataFrame representing the alignment.
-            unit_type (Type[LinguisticUnit]): The type of linguistic unit the alignment is based on.
-
-        TODO: Replace this with a more specific method description.
+            dataframe (pandas.DataFrame): DataFrame representing the
+                alignment between audio and linguistic units.
+            unit_type (Type[LinguisticUnit]): Linguistic unit type that
+                the alignment is based on.
         """
         pass
 
     @property
     def units(self) -> Optional[List[LinguisticUnit]]:
         """
-        Gets the linguistic units involved in the alignment.
+        Retrieves the list of linguistic units involved in the alignment.
+        The units are derived from the DataFrame used during initialization.
 
         Returns:
-            Optional[List[LinguisticUnit]]: The linguistic units, or `None` if no units are involved.
-
-        TODO: Replace this with a more specific method description.
+            Optional[List[LinguisticUnit]]: List of linguistic units
+                involved in the alignment. If no units are available,
+                returns None.
         """
         pass
 
 
 class WordAlignment(Alignment):
     """
-    Represents an alignment based on words.
-
-    TODO: Replace this with a more specific class description.
+    A class representing alignment of linguistic content at the granularity
+    of words. Inherits from the base class 'Alignment'.
     """
 
     def __init__(
@@ -59,21 +60,20 @@ class WordAlignment(Alignment):
         dataframe: pandas.DataFrame,
     ) -> None:
         """
-        Initializes a `WordAlignment` instance.
+        Constructs a WordAlignment instance using a dataframe that
+        represents the word-level alignment of linguistic content.
 
         Args:
-            dataframe (pandas.DataFrame): The DataFrame representing the alignment.
-
-        TODO: Replace this with a more specific method description.
+            dataframe (pandas.DataFrame): DataFrame representing the
+                alignment between audio and word units.
         """
         pass
 
 
 class PhonemeAlignment(Alignment):
     """
-    Represents an alignment based on phonemes.
-
-    TODO: Replace this with a more specific class description.
+    A class representing alignment of linguistic content at the granularity
+    of phonemes. Inherits from the base class 'Alignment'.
     """
 
     def __init__(
@@ -81,31 +81,29 @@ class PhonemeAlignment(Alignment):
         dataframe: pandas.DataFrame,
     ) -> None:
         """
-        Initializes a `PhonemeAlignment` instance.
+        Constructs a PhonemeAlignment instance using a dataframe that
+        represents the phoneme-level alignment of linguistic content.
 
         Args:
-            dataframe (pandas.DataFrame): The DataFrame representing the alignment.
-
-        TODO: Replace this with a more specific method description.
+            dataframe (pandas.DataFrame): DataFrame representing the
+                alignment between audio and phoneme units.
         """
         pass
 
 
 class Transcript:
     """
-    Represents a linguistic transcript.
-
-    TODO: Replace this with a more specific class description.
+    Class representing a linguistic transcript which facilitates operations
+    like alignment calculation and access to word and phoneme components.
     """
 
     def __init__(self, data: str) -> None:
         """
-        Initializes a `Transcript` instance.
+        Constructs a Transcript instance from a given string representation
+        of linguistic data.
 
         Args:
-            data (str): The transcript data.
-
-        TODO: Replace this with a more specific method description.
+            data (str): String representation of the transcript data.
         """
         pass
 
@@ -115,15 +113,14 @@ class Transcript:
         file_path: str,
     ) -> "Transcript":
         """
-        Creates a `Transcript` instance from a file.
+        Creates a Transcript instance by loading linguistic data from a
+        specified file.
 
         Args:
-            file_path (str): The path to the file.
+            file_path (str): Path to the file containing the transcript data.
 
         Returns:
-            Transcript: The created `Transcript` instance.
-
-        TODO: Replace this with a more specific method description.
+            Transcript: A Transcript instance initialized with data from the file.
         """
         pass
 
@@ -132,59 +129,54 @@ class Transcript:
         waveform: Waveform,
     ) -> None:
         """
-        Calculates the alignment of the transcript with a waveform.
+        Calculates the alignment of the transcript with a given waveform,
+        facilitating synchronization of audio and linguistic data.
 
         Args:
-            waveform (Waveform): The waveform.
-
-        TODO: Replace this with a more specific method description.
+            waveform (Waveform): The waveform associated with the transcript.
         """
         pass
 
     @property
     def word_alignment(self) -> Optional[WordAlignment]:
         """
-        Gets the word alignment of the transcript.
+        Provides access to the word-level alignment of the transcript.
 
         Returns:
-            Optional[WordAlignment]: The word alignment, or `None` if no word alignment exists.
-
-        TODO: Replace this with a more specific method description.
+            Optional[WordAlignment]: The word alignment data if available,
+            otherwise None.
         """
         pass
 
     @property
     def phoneme_alignment(self) -> Optional[PhonemeAlignment]:
         """
-        Gets the phoneme alignment of the transcript.
+        Provides access to the phoneme-level alignment of the transcript.
 
         Returns:
-            Optional[PhonemeAlignment]: The phoneme alignment, or `None` if no phoneme alignment exists.
-
-        TODO: Replace this with a more specific method description.
+            Optional[PhonemeAlignment]: The phoneme alignment data if
+            available, otherwise None.
         """
         pass
 
     @property
     def words(self) -> Optional[List[Word]]:
         """
-        Gets the words in the transcript.
+        Retrieves all words in the transcript.
 
         Returns:
-            Optional[List[Word]]: The words, or `None` if no words are in the transcript.
-
-        TODO: Replace this with a more specific method description.
+            Optional[List[Word]]: List of words in the transcript if available,
+            otherwise None.
         """
         pass
 
     @property
     def phonemes(self) -> Optional[List[Phoneme]]:
         """
-        Gets the phonemes in the transcript.
+        Retrieves all phonemes in the transcript.
 
         Returns:
-            Optional[List[Phoneme]]: The phonemes, or `None` if no phonemes are in the transcript.
-
-        TODO: Replace this with a more specific method description.
+            Optional[List[Phoneme]]: List of phonemes in the transcript if
+            available, otherwise None.
         """
         pass

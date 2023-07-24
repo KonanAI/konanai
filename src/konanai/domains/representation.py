@@ -1,3 +1,4 @@
+
 from typing import Dict, Optional, Union, Any
 
 
@@ -7,9 +8,8 @@ import matplotlib.figure
 
 class Plot:
     """
-    Class for creating and managing plots.
-
-    TODO: Replace this with a more specific class description.
+    Class to facilitate the creation, management, and storage of various
+    types of plots such as embeddings and decision boundaries.
     """
 
     def embedding(
@@ -18,14 +18,18 @@ class Plot:
         show: bool = False,
     ) -> matplotlib.figure.Figure:
         """
-        Create a plot for an embedding.
+        Creates a two-dimensional plot from provided embedding data. This
+        method is useful for visualizing data in reduced dimensions.
 
         Args:
-            embedding (Dict[str, numpy.ndarray]): The embedding data to plot.
-            show (bool, optional): If True, display the plot. Defaults to False.
+            embedding (Dict[str, numpy.ndarray]): Dictionary containing
+                labels and their corresponding embedding vectors to plot.
+            show (bool, optional): If set to True, the plot is immediately
+                displayed. Defaults to False.
 
         Returns:
-            Figure: The matplotlib Figure object with the embedding plot.
+            matplotlib.figure.Figure: Figure object with the generated
+                embedding plot.
         """
         pass
 
@@ -35,14 +39,18 @@ class Plot:
         show: bool = False,
     ) -> matplotlib.figure.Figure:
         """
-        Create a plot for a decision boundary.
+        Creates a decision boundary plot from provided data. This method is
+        useful for visualizing decision regions of classifiers.
 
         Args:
-            boundary (Dict[str, numpy.ndarray]): The decision boundary data to plot.
-            show (bool, optional): If True, display the plot. Defaults to False.
+            boundary (Dict[str, numpy.ndarray]): Dictionary containing
+                labels and corresponding boundary data to plot.
+            show (bool, optional): If set to True, the plot is immediately
+                displayed. Defaults to False.
 
         Returns:
-            Figure: The matplotlib Figure object with the decision boundary plot.
+            matplotlib.figure.Figure: Figure object with the generated
+                decision boundary plot.
         """
         pass
 
@@ -52,20 +60,20 @@ class Plot:
         fig: matplotlib.figure.Figure,
     ) -> None:
         """
-        Save a figure to a file.
+        Saves the provided figure to a file at the specified path.
 
         Args:
-            path (str): The path to the file where the figure will be saved.
-            fig (matplotlib.figure.Figure): The figure to save.
+            path (str): Path to the file where the figure will be saved. The
+                path includes the filename and its extension.
+            fig (matplotlib.figure.Figure): The figure object to save.
         """
         pass
 
 
 class DataHandler:
     """
-    Base class for handling data storage and retrieval.
-
-    TODO: Replace this with a more specific class description.
+    Base class to manage data storage and retrieval operations. Provides
+    functions to save and load data to a specified path.
     """
 
     def __init__(
@@ -73,10 +81,11 @@ class DataHandler:
         basepath: str,
     ) -> None:
         """
-        Initialize the data handler.
+        Initializes the DataHandler with a specified base path for data
+        storage.
 
         Args:
-            basepath (str): The base path for data storage.
+            basepath (str): The base directory where data will be stored.
         """
         pass
 
@@ -85,28 +94,33 @@ class DataHandler:
         data: Dict[str, Union[numpy.ndarray, Dict[str, numpy.ndarray]]],
     ) -> None:
         """
-        Save the given data.
+        Stores the provided data to the base path. This method should be
+        overridden by subclasses to specify the storage mechanism.
 
         Args:
-            data (Dict[str, Union[numpy.ndarray, Dict[str, numpy.ndarray]]]): The data to be saved.
+            data (Dict[str, Union[numpy.ndarray, Dict[str, numpy.ndarray]]]):
+                The data to be saved. This can be a dictionary of numpy arrays
+                or nested dictionaries thereof.
         """
         pass
 
     def _load(self) -> Optional[Dict[str, numpy.ndarray]]:
         """
-        Load data.
+        Loads data from the base path. This method should be overridden by
+        subclasses to specify the data retrieval mechanism.
 
         Returns:
-            Optional[Dict[str, numpy.ndarray]]: The loaded data, or None if no data is found.
+            Optional[Dict[str, numpy.ndarray]]: The loaded data as a
+                dictionary of numpy arrays, or None if no data is found.
         """
         pass
 
 
 class Embedding(DataHandler):
     """
-    Class for handling the embedding of data. Inherits from DataHandler.
-
-    TODO: Replace this with a more specific class description.
+    A specialized DataHandler for managing embeddings. Provides functionality
+    for updating embeddings with given model, data, and labels, scoring
+    embeddings, and plotting them.
     """
 
     def update(
@@ -116,21 +130,25 @@ class Embedding(DataHandler):
         labels: numpy.ndarray,
     ) -> None:
         """
-        Update the embedding with a given model, data, and labels.
+        Uses the provided model to update the stored embedding using the
+        supplied data and associated labels.
 
         Args:
-            model (Any): The model to use for updating the embedding.
-            data (numpy.ndarray): The data to use for the embedding.
-            labels (numpy.ndarray): The labels associated with the data.
+            model (Any): The machine learning model used to generate the
+                embedding.
+            data (numpy.ndarray): The data to be embedded.
+            labels (numpy.ndarray): The labels corresponding to the data.
         """
         pass
 
     def score(self) -> Dict[str, float]:
         """
-        Compute and return a score for the embedding.
+        Computes a score quantifying the quality of the stored embedding. The
+        scoring algorithm is implemented by subclasses.
 
         Returns:
-            Dict[str, float]: The score for the embedding.
+            Dict[str, float]: A dictionary mapping metric names to their
+                respective scores for the embedding.
         """
         pass
 
@@ -140,23 +158,25 @@ class Embedding(DataHandler):
         show: bool = False,
     ) -> Plot:
         """
-        Get a plot of the embedding.
+        Generates a visual plot of the stored embedding using the supplied
+        Plot object. If `show` is True, the plot will also be displayed.
 
         Args:
-            plotter (Plot): The Plot object to use for plotting.
-            show (bool, optional): If True, display the plot. Defaults to False.
+            plotter (Plot): The Plot object used for generating the plot.
+            show (bool, optional): If True, the plot will be displayed
+                immediately. Defaults to False.
 
         Returns:
-            Plot: The Plot object with the embedding plot.
+            Plot: The Plot object containing the generated embedding plot.
         """
         pass
 
 
 class DecisionBoundary(DataHandler):
     """
-    Class for handling decision boundary data. Inherits from DataHandler.
-
-    TODO: Replace this with a more specific class description.
+    A specialized DataHandler for managing decision boundary data. Provides
+    functionality to update and score decision boundaries, get a meshgrid
+    from data, and plot the decision boundaries.
     """
 
     def __init__(
@@ -164,10 +184,10 @@ class DecisionBoundary(DataHandler):
         basepath: str,
     ) -> None:
         """
-        Initializes a DecisionBoundary object.
+        Initializes a DecisionBoundary instance with the provided base path.
 
         Args:
-            basepath (str): The basepath for the data to be handled.
+            basepath (str): The base path for storing decision boundary data.
         """
         pass
 
@@ -178,21 +198,25 @@ class DecisionBoundary(DataHandler):
         labels: numpy.ndarray,
     ) -> None:
         """
-        Update the decision boundary with a given model, data, and labels.
+        Uses the provided model to update the stored decision boundary using
+        the supplied data and associated labels.
 
         Args:
-            model (Any): The model to use for updating the decision boundary.
-            data (numpy.ndarray): The data to use for the decision boundary.
-            labels (numpy.ndarray): The labels associated with the data.
+            model (Any): The machine learning model used to determine the
+                decision boundary.
+            data (numpy.ndarray): The data to be used for the decision boundary.
+            labels (numpy.ndarray): The labels corresponding to the data.
         """
         pass
 
     def score(self) -> Dict[str, float]:
         """
-        Compute and return a score for the decision boundary.
+        Computes a score quantifying the quality of the stored decision
+        boundary. The scoring algorithm is implemented by subclasses.
 
         Returns:
-            Dict[str, float]: The score for the decision boundary.
+            Dict[str, float]: A dictionary mapping metric names to their
+                respective scores for the decision boundary.
         """
         pass
 
@@ -201,7 +225,8 @@ class DecisionBoundary(DataHandler):
         data: numpy.ndarray,
     ) -> Dict[str, numpy.ndarray]:
         """
-        Get a meshgrid based on the data.
+        Generates a meshgrid based on the given data. This grid is typically
+        used for decision boundary visualization.
 
         Args:
             data (numpy.ndarray): The data used to generate the meshgrid.
@@ -217,11 +242,13 @@ class DecisionBoundary(DataHandler):
         meshgrid: Dict[str, numpy.ndarray],
     ) -> Dict[str, numpy.ndarray]:
         """
-        Get the decision boundary based on the model and meshgrid.
+        Determines the decision boundary based on the given model and
+        meshgrid.
 
         Args:
             model (Any): The model used to determine the decision boundary.
-            meshgrid (Dict[str, numpy.ndarray]): The meshgrid over which to determine the decision boundary.
+            meshgrid (Dict[str, numpy.ndarray]): The meshgrid over which to
+                determine the decision boundary.
 
         Returns:
             Dict[str, numpy.ndarray]: The decision boundary.
@@ -234,13 +261,17 @@ class DecisionBoundary(DataHandler):
         show: bool = False,
     ) -> Plot:
         """
-        Get a plot of the decision boundary.
+        Generates a visual plot of the stored decision boundary using the
+        supplied Plot object. If `show` is True, the plot will also be
+        displayed.
 
         Args:
-            plotter (Plot): The Plot object to use for plotting.
-            show (bool, optional): If True, display the plot. Defaults to False.
+            plotter (Plot): The Plot object used for generating the plot.
+            show (bool, optional): If True, the plot will be displayed
+                immediately. Defaults to False.
 
         Returns:
-            Plot: The Plot object with the decision boundary plot.
+            Plot: The Plot object containing the generated decision boundary
+                plot.
         """
         pass

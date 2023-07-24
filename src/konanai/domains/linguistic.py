@@ -1,3 +1,4 @@
+
 from abc import ABC, abstractmethod
 from typing import Type, Callable, Optional, Tuple, List, Dict, ClassVar, Set
 from .time import Time
@@ -8,26 +9,24 @@ ARTICULATORY_CLASSIFICATION = {}  # replace with actual values
 
 class LinguisticUnit(ABC):
     """
-    Abstract base class representing a general linguistic unit.
+    Base class for representing linguistic units such as words or phonemes.
+    It includes common attributes and methods relevant to these units.
 
     Attributes:
-        active_vocabulary (ClassVar[Set[str]]): A set containing the active vocabulary.
-
-    TODO: Replace this with a more specific class description.
+        active_vocabulary (ClassVar[Set[str]]): Stores unique linguistic
+        units currently in use across all instances of subclasses.
     """
 
     active_vocabulary: ClassVar[Set[str]] = set()
 
     def __init__(self, start: Time, end: Time, data: str):
         """
-        Initialize a LinguisticUnit.
+        Construct a LinguisticUnit with start and end times, and content.
 
         Args:
-            start (Time): The start time of the linguistic unit.
-            end (Time): The end time of the linguistic unit.
-            data (str): The actual content of the linguistic unit.
-
-        TODO: Replace this with a more specific method description.
+            start (Time): Time object representing when the unit starts.
+            end (Time): Time object representing when the unit ends.
+            data (str): The content of the linguistic unit.
         """
         pass
 
@@ -35,21 +34,24 @@ class LinguisticUnit(ABC):
     @abstractmethod
     def duration(self) -> Time:
         """
-        Calculate and return the duration of the linguistic unit.
+        Provides the duration of the linguistic unit by computing the
+        difference between the end time and start time.
 
         Returns:
             Time: The duration of the linguistic unit.
-
-        TODO: Replace this with a more specific property description.
         """
         pass
 
 
 class Phoneme(LinguisticUnit):
     """
-    Class representing a Phoneme, inherits from LinguisticUnit.
+    Represents a Phoneme, a unit of sound in speech, subclassing
+    LinguisticUnit. It includes properties related to the Phoneme's
+    characteristics and duration.
 
-    TODO: Replace this with a more specific class description.
+    Attributes:
+        articulatory_classification (ARTICULATORY_CLASSIFICATION):
+        Classification based on phoneme's articulatory properties.
     """
 
     articulatory_classification = ARTICULATORY_CLASSIFICATION
@@ -57,9 +59,11 @@ class Phoneme(LinguisticUnit):
     @property
     def classification(self) -> str:
         """
-        Returns the classification of the Phoneme.
+        Get the articulatory classification of the Phoneme based on
+        its production properties.
 
-        TODO: Replace this with a more specific property description.
+        Returns:
+            str: The classification of the Phoneme.
         """
         pass
 
@@ -69,120 +73,105 @@ class Phoneme(LinguisticUnit):
         group: str,
     ) -> List[str]:
         """
-        Get phonemes by group.
+        Retrieve all phonemes belonging to a specific group defined
+        by its articulatory characteristics.
 
         Args:
-            group (str): The group to get phonemes for.
+            group (str): The articulatory group for phoneme retrieval.
 
         Returns:
-            List[str]: List of phonemes in the specified group.
-
-        TODO: Replace this with a more specific method description.
+            List[str]: Phonemes corresponding to the specified group.
         """
         pass
 
     @classmethod
     def coronals(cls) -> List[str]:
         """
-        Get phonemes in the coronal group.
+        Retrieves phonemes belonging to the coronal group,
+        characterized by the blade of the tongue being used
+        for articulation.
 
         Returns:
-            List[str]: List of phonemes in the coronal group.
-
-        TODO: Replace this with a more specific method description.
+            List[str]: Phonemes in the coronal group.
         """
         pass
 
     @classmethod
     def dorsals(cls) -> List[str]:
         """
-        Get phonemes in the dorsal group.
+        Retrieves phonemes belonging to the dorsal group,
+        characterized by the body of the tongue being used
+        for articulation.
 
         Returns:
-            List[str]: List of phonemes in the dorsal group.
-
-        TODO: Replace this with a more specific method description.
+            List[str]: Phonemes in the dorsal group.
         """
         pass
 
     @classmethod
     def labials(cls) -> List[str]:
         """
-        Get phonemes in the labial group.
+        Retrieves phonemes belonging to the labial group,
+        characterized by the lips being used for articulation.
 
         Returns:
-            List[str]: List of phonemes in the labial group.
-
-        TODO: Replace this with a more specific method description.
+            List[str]: Phonemes in the labial group.
         """
         pass
 
     @classmethod
     def laryngeals(cls) -> List[str]:
         """
-        Get phonemes in the laryngeal group.
+        Retrieves phonemes belonging to the laryngeal group,
+        characterized by the larynx being used for articulation.
 
         Returns:
-            List[str]: List of phonemes in the laryngeal group.
-
-        TODO: Replace this with a more specific method description.
+            List[str]: Phonemes in the laryngeal group.
         """
         pass
 
     @classmethod
     def silent(cls) -> List[str]:
         """
-        Get silent phonemes.
+        Retrieves silent phonemes, which do not produce audible
+        sound but are part of the speech structure.
 
         Returns:
-            List[str]: List of silent phonemes.
-
-        TODO: Replace this with a more specific method description.
+            List[str]: Silent phonemes.
         """
         pass
 
     @classmethod
     def special(cls) -> List[str]:
         """
-        Get special phonemes.
+        Retrieves special phonemes, that have unique articulatory
+        properties or functions in the language system.
 
         Returns:
-            List[str]: List of special phonemes.
-
-        TODO: Replace this with a more specific method description.
-        """
-        pass
-
-    @classmethod
-    def vowels(cls) -> List[str]:
-        """
-        Get vowel phonemes.
-
-        Returns:
-            List[str]: List of vowel phonemes.
-
-        TODO: Replace this with a more specific method description.
+            List[str]: Special phonemes.
         """
         pass
 
     @property
     def duration(self) -> Time:
         """
-        Calculate and return the duration of the Phoneme.
+        Provides the duration of the Phoneme, calculated as the
+        difference between the end and start times of the Phoneme.
 
         Returns:
             Time: The duration of the Phoneme.
-
-        TODO: Replace this with a more specific property description.
         """
         pass
 
 
 class Word(LinguisticUnit):
     """
-    Class representing a Word, inherits from LinguisticUnit.
+    Represents a Word, a fundamental unit of language, that inherits
+    from the LinguisticUnit class.
 
-    TODO: Replace this with a more specific class description.
+    Each Word object encapsulates the start and end times, the actual
+    word content, and methods to perform various operations such as
+    syllabification and duration calculation.
     """
 
     @classmethod
@@ -191,26 +180,26 @@ class Word(LinguisticUnit):
         phonemes: Optional[List[str]] = None,
     ) -> List[List[str]]:
         """
-        Syllabify a list of phonemes.
+        Breaks a list of phonemes into constituent syllables according
+        to linguistic rules.
 
         Args:
-            phonemes (Optional[List[str]]): List of phonemes to syllabify.
+            phonemes (Optional[List[str]]): List of phonemes to be
+                syllabified.
 
         Returns:
-            List[List[str]]: List of syllables with phonemes.
-
-        TODO: Replace this with a more specific method description.
+            List[List[str]]: Nested list where each inner list represents
+                a syllable, composed of phonemes.
         """
         pass
 
     @property
     def duration(self) -> Time:
         """
-        Calculate and return the duration of the Word.
+        Computes the duration of the word by subtracting the start time
+        from the end time.
 
         Returns:
-            Time: The duration of the Word.
-
-        TODO: Replace this with a more specific property description.
+            Time: The duration of the word.
         """
         pass
