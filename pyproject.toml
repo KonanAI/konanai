@@ -3,51 +3,60 @@ requires = ["flit_core >=3.2,<4"]
 build-backend = "flit_core.buildapi"
 
 [project]
-name = "konanai"
-version = "0.0.1"
-description = "Konanai is a comprehensive Python package for speech analysis and modeling. It facilitates acoustic, phonetic, and linguistic processing, alignment, visualization, and estimation. The package is enhanced with various external utilities, including UMAP models, audio feature extraction tools, and forced alignment methods."
-authors = [{name = "Joseph Konan", email = "konan@konanai.com"}]
-readme = "README.rst"  # if you have a readme file
-license = {file = "LICENSE"}  # if you have a license file
-urls = {homepage = "https://github.com/KonanAI-LLC/konanai"}
-classifiers = [
-    "Development Status :: 3 - Alpha",
-    "Intended Audience :: Developers",
-    "Intended Audience :: Science/Research",
-    "License :: OSI Approved :: Apache Software License",
-    "Programming Language :: Python :: 3",
-    "Programming Language :: Python :: 3.10",
-    "Programming Language :: Python :: 3.11",
-]
-requires-python = ">=3.10"
+name = "lumache"
+authors = [{name = "Graziella", email = "graziella@lumache"}]
+dynamic = ["version", "description"]
 
-[project.scripts]
-# add your console scripts here
+# [build-system]
+# requires = ["flit_core >=3.2,<4"]
+# build-backend = "flit_core.buildapi"
 
-[project.dependencies]
-dependencies = [
-    "tensorflow",
-    "torch",
-    "torchaudio",
-    "numpy",
-    "matplotlib",
-    "scikit-learn",
-    "umap-learn",
-    "pandas",
-    "opensmile",
-    "transformers",
-    "soundfile",
-    "librosa",
-    "argparse",
-    "tqdm",
-    "datasets",
-    "g2p_en",
-    "jiwer",
-    "praatio",
-    "scipy",
-    "g2pM",
-    "typing-extensions",
-]
+# [project]
+# name = "konanai"
+# version = "0.0.1"
+# description = "Konanai is a comprehensive Python package for speech analysis and modeling. It facilitates acoustic, phonetic, and linguistic processing, alignment, visualization, and estimation. The package is enhanced with various external utilities, including UMAP models, audio feature extraction tools, and forced alignment methods."
+# authors = [{name = "Joseph Konan", email = "konan@konanai.com"}]
+# readme = "README.rst"  # if you have a readme file
+# license = {file = "LICENSE"}  # if you have a license file
+# urls = {homepage = "https://github.com/KonanAI-LLC/konanai"}
+# classifiers = [
+#     "Development Status :: 3 - Alpha",
+#     "Intended Audience :: Developers",
+#     "Intended Audience :: Science/Research",
+#     "License :: OSI Approved :: Apache Software License",
+#     "Programming Language :: Python :: 3",
+#     "Programming Language :: Python :: 3.10",
+#     "Programming Language :: Python :: 3.11",
+# ]
+# requires-python = ">=3.10"
 
-[tool.flit.module]
-konanai = "src/konanai"
+# [project.scripts]
+# # add your console scripts here
+
+# [project.dependencies]
+# dependencies = [
+#     "tensorflow",
+#     "torch",
+#     "torchaudio",
+#     "numpy",
+#     "matplotlib",
+#     "scikit-learn",
+#     "umap-learn",
+#     "pandas",
+#     "opensmile",
+#     "transformers",
+#     "soundfile",
+#     "librosa",
+#     "argparse",
+#     "tqdm",
+#     "datasets",
+#     "g2p_en",
+#     "jiwer",
+#     "praatio",
+#     "scipy",
+#     "g2pM",
+#     "typing-extensions",
+# ]
+
+# [tool.flit.module]
+# konanai = "src/konanai"
