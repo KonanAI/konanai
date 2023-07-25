@@ -49,7 +49,5 @@ dependencies = [
     "typing-extensions",
 ]
 
-[project.optional-dependencies]
-
 [tool.flit.module]
 konanai = "src/konanai"
