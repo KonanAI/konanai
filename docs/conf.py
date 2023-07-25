@@ -96,40 +96,40 @@ release, version = get_version("konanai")
 # html_title = f"konanai Documentation ({version})"
 # html_show_sourcelink = False
 
-exclude_patterns = ['**/konanai/src/konanai/externals/lib']
+# exclude_patterns = ['**/konanai/src/konanai/externals/lib']
 
 # LaTeX ----------------------------------------------------------------
 
-latex_documents = [(master_doc, f"konanai-{version}.tex", html_title, author, "manual")]
+# latex_documents = [(master_doc, f"konanai-{version}.tex", html_title, author, "manual")]
 
 # Local Extensions -----------------------------------------------------
 
-def github_link(name, rawtext, text, lineno, inliner, options=None, content=None):
-    app = inliner.document.settings.env.app
-    release = app.config.release
-    base_url = "https://github.com/KonanAI-LLC/konanai/tree/"
+# def github_link(name, rawtext, text, lineno, inliner, options=None, content=None):
+#     app = inliner.document.settings.env.app
+#     release = app.config.release
+#     base_url = "https://github.com/KonanAI-LLC/konanai/tree/"
 
-    if text.endswith(">"):
-        words, text = text[:-1].rsplit("<", 1)
-        words = words.strip()
-    else:
-        words = None
+#     if text.endswith(">"):
+#         words, text = text[:-1].rsplit("<", 1)
+#         words = words.strip()
+#     else:
+#         words = None
 
-    if packaging.version.parse(release).is_devrelease:
-        url = f"{base_url}main/{text}"
-    else:
-        url = f"{base_url}{release}/{text}"
+#     if packaging.version.parse(release).is_devrelease:
+#         url = f"{base_url}main/{text}"
+#     else:
+#         url = f"{base_url}{release}/{text}"
 
-    if words is None:
-        words = url
+#     if words is None:
+#         words = url
 
-    from docutils.nodes import reference
-    from docutils.parsers.rst.roles import set_classes
+#     from docutils.nodes import reference
+#     from docutils.parsers.rst.roles import set_classes
 
-    options = options or {}
-    set_classes(options)
-    node = reference(rawtext, words, refuri=url, **options)
-    return [node], []
+#     options = options or {}
+#     set_classes(options)
+#     node = reference(rawtext, words, refuri=url, **options)
+#     return [node], []
 
 # def setup(app: Sphinx):
 #     app.add_role("gh", github_link)
