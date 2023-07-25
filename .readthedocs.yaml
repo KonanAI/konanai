@@ -33,12 +33,3 @@ sphinx:
 # python:
 #   install:
 #     - requirements: docs/requirements.txt
-
-python:
-  install:
-    - extra_requirements:
-        - sphinx
-        - pallets_sphinx_themes
-        - sphinxcontrib-napoleon
-        - sphinxcontrib-log-cabinet
-        - sphinx_issues
