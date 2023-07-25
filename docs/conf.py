@@ -11,21 +11,21 @@
 
 # -- General configuration
 
-extensions = [
-    'sphinx.ext.duration',
-    'sphinx.ext.doctest',
-    'sphinx.ext.autodoc',
-    'sphinx.ext.autosummary',
-    'sphinx.ext.intersphinx',
-]
+# extensions = [
+#     'sphinx.ext.duration',
+#     'sphinx.ext.doctest',
+#     'sphinx.ext.autodoc',
+#     'sphinx.ext.autosummary',
+#     'sphinx.ext.intersphinx',
+# ]
 
-intersphinx_mapping = {
-    'python': ('https://docs.python.org/3/', None),
-    'sphinx': ('https://www.sphinx-doc.org/en/master/', None),
-}
-intersphinx_disabled_domains = ['std']
+# intersphinx_mapping = {
+#     'python': ('https://docs.python.org/3/', None),
+#     'sphinx': ('https://www.sphinx-doc.org/en/master/', None),
+# }
+# intersphinx_disabled_domains = ['std']
 
-templates_path = ['_templates']
+# templates_path = ['_templates']
 
 # -- Options for HTML output
 
@@ -53,26 +53,26 @@ release, version = get_version("konanai")
 
 # # General --------------------------------------------------------------
 
-# master_doc = "index"
-# extensions = [
-#     "sphinx.ext.autodoc",
-#     "sphinx.ext.intersphinx",
-#     "sphinxcontrib.log_cabinet",
-#     "pallets_sphinx_themes",
-#     "sphinx_issues",
-#     "sphinx_tabs.tabs",
-# ]
-# autodoc_typehints = "description"
-# autodoc_default_options = {
-#     'member-order': 'bysource',
-#     'undoc-members': True,
-# }
-# add_module_names = False
+master_doc = "index"
+extensions = [
+    "sphinx.ext.autodoc",
+    "sphinx.ext.intersphinx",
+    "sphinxcontrib.log_cabinet",
+    "pallets_sphinx_themes",
+    "sphinx_issues",
+    "sphinx_tabs.tabs",
+]
+autodoc_typehints = "description"
+autodoc_default_options = {
+    'member-order': 'bysource',
+    'undoc-members': True,
+}
+add_module_names = False
 
-# intersphinx_mapping = {
-#     "python": ("https://docs.python.org/3/", None),
-# }
-# issues_github_path = "KonanAI-LLC/konanai"
+intersphinx_mapping = {
+    "python": ("https://docs.python.org/3/", None),
+}
+issues_github_path = "KonanAI-LLC/konanai"
 
 # # HTML -----------------------------------------------------------------
 
