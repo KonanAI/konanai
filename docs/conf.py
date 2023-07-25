@@ -2,6 +2,7 @@
 import os
 import sys
 sys.path.insert(0, os.path.abspath('../src'))
+sys.path.insert(0, os.path.abspath('../src/konanai/externals/lib/charsiu/src'))
 
 # All the existing imports here
 import subprocess
