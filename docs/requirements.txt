@@ -1,6 +1,7 @@
+-e ..
 sphinx
 pallets_sphinx_themes
 sphinxcontrib-napoleon
-sphinxcontrib-log-cabinet
+sphinxcontrib-log_cabinet
 sphinx_issues
 sphinx_tabs
