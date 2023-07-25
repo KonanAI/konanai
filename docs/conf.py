@@ -2,22 +2,22 @@
 
 # -- Project information
 
-project = 'Lumache'
-copyright = '2021, Graziella'
-author = 'Graziella'
+# project = 'Lumache'
+# copyright = '2021, Graziella'
+# author = 'Graziella'
 
-release = '0.1'
-version = '0.1.0'
+# release = '0.1'
+# version = '0.1.0'
 
 # -- General configuration
 
-extensions = [
-    'sphinx.ext.duration',
-    'sphinx.ext.doctest',
-    'sphinx.ext.autodoc',
-    'sphinx.ext.autosummary',
-    'sphinx.ext.intersphinx',
-]
+# extensions = [
+#     'sphinx.ext.duration',
+#     'sphinx.ext.doctest',
+#     'sphinx.ext.autodoc',
+#     'sphinx.ext.autosummary',
+#     'sphinx.ext.intersphinx',
+# ]
 
 intersphinx_mapping = {
     'python': ('https://docs.python.org/3/', None),
@@ -46,22 +46,22 @@ from sphinx.util.docstrings import prepare_docstring
 
 # Project --------------------------------------------------------------
 
-# project = "konanai"
-# copyright = "2023 KonanAI LLC"
-# author = "Joseph Konan"
-# release, version = get_version("konanai")
+project = "konanai"
+copyright = "2023 KonanAI LLC"
+author = "Joseph Konan"
+release, version = get_version("konanai")
 
-# # General --------------------------------------------------------------
+# General --------------------------------------------------------------
 
 # master_doc = "index"
-# extensions = [
-#     "sphinx.ext.autodoc",
-#     "sphinx.ext.intersphinx",
-#     "sphinxcontrib.log_cabinet",
-#     "pallets_sphinx_themes",
-#     "sphinx_issues",
-#     "sphinx_tabs.tabs",
-# ]
+extensions = [
+    "sphinx.ext.autodoc",
+    "sphinx.ext.intersphinx",
+    "sphinxcontrib.log_cabinet",
+    "pallets_sphinx_themes",
+    "sphinx_issues",
+    "sphinx_tabs.tabs",
+]
 # autodoc_typehints = "description"
 # autodoc_default_options = {
 #     'member-order': 'bysource',
