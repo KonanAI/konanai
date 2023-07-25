@@ -78,47 +78,6 @@ domains integral to speech and language processing.
    :inherited-members:
 
 
-Externals Module
-----------------
-
-.. module:: konanai.externals
-
-This module provides intuitive, easy-to-use wrappers for several external tools
-integral to high-level speech and language processing tasks.
-
-.. automodule:: konanai.externals
-   :members:
-   :inherited-members:
-
-.. autoclass:: konanai.externals.umap_wrapper.NonparametricUmap
-   :members:
-   :inherited-members:
-
-.. autoclass:: konanai.externals.umap_wrapper.ParametricUmap
-   :members:
-   :inherited-members:
-
-.. autoclass:: konanai.externals.opensmile_wrapper.BaseOpensmile
-   :members:
-   :inherited-members:
-
-.. autoclass:: konanai.externals.opensmile_wrapper.EgemapsV2
-   :members:
-   :inherited-members:
-
-.. autoclass:: konanai.externals.opensmile_wrapper.Compare2016
-   :members:
-   :inherited-members:
-
-.. autoclass:: konanai.externals.charsiu_wrapper.ForcedAligner
-   :members:
-   :inherited-members:
-
-.. autoclass:: konanai.externals.charsiu_wrapper.PredictiveAligner
-   :members:
-   :inherited-members:
-
-
 Models Module
 -------------
 
@@ -161,5 +120,46 @@ an essential component of high-level language and speech processing research.
    :inherited-members:
 
 .. autoclass:: konanai.empirics.ablation.Ablation
+   :members:
+   :inherited-members:
+
+
+Externals Module
+----------------
+
+.. module:: konanai.externals
+
+This module provides intuitive, easy-to-use wrappers for several external tools
+integral to high-level speech and language processing tasks.
+
+.. automodule:: konanai.externals
+   :members:
+   :inherited-members:
+
+.. autoclass:: konanai.externals.umap_wrapper.NonparametricUmap
+   :members:
+   :inherited-members:
+
+.. autoclass:: konanai.externals.umap_wrapper.ParametricUmap
+   :members:
+   :inherited-members:
+
+.. autoclass:: konanai.externals.opensmile_wrapper.BaseOpensmile
+   :members:
+   :inherited-members:
+
+.. autoclass:: konanai.externals.opensmile_wrapper.EgemapsV2
+   :members:
+   :inherited-members:
+
+.. autoclass:: konanai.externals.opensmile_wrapper.Compare2016
+   :members:
+   :inherited-members:
+
+.. autoclass:: konanai.externals.charsiu_wrapper.ForcedAligner
+   :members:
+   :inherited-members:
+
+.. autoclass:: konanai.externals.charsiu_wrapper.PredictiveAligner
    :members:
    :inherited-members:
