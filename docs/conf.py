@@ -1,7 +1,9 @@
 # Configuration file for the Sphinx documentation builder.
+import os
+import sys
+sys.path.insert(0, os.path.abspath('../../src'))
 
 # All the existing imports here
-import os
 import subprocess
 import packaging.version
 from pallets_sphinx_themes import get_version
