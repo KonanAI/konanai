@@ -27,7 +27,7 @@ import sys
 import os
 
 charsiu_path = os.path.join(os.path.dirname(__file__), "lib", "charsiu", "src")
-
+print("charsiu_path", charsiu_path)
 sys.path.append(charsiu_path)
 
 import Charsiu
