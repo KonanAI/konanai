@@ -107,13 +107,19 @@ def setup(app: Sphinx):
     app.add_role("gh", github_link)
     app.connect('build-finished', run_postprocess)
 
+def find_index_html(start_path):
+    for root, dirs, files in os.walk(start_path):
+        if 'index.html' in files:
+            print(os.path.join(root, 'index.html'))
+
 def run_postprocess(app, exception):
     # The script and html directory paths
     script_path = os.path.join(os.path.dirname(__file__), "postprocess.py")
     
     # The path to the 'index.html' file
     html_file_path = os.path.join(app.outdir, "_readthedocs", "html", "index.html")
-    
+
+    find_index_html('.')
     print(f"Running postprocess on: {html_file_path}")  # print statement
 
     # Call the postprocess script on the 'index.html' file
