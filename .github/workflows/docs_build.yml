@@ -2,9 +2,13 @@ name: Build Docs
 
 on:
   push:
-    branches: [ main ]
+    branches:
+      - main
+      - refactored-template
   pull_request:
-    branches: [ main ]
+    branches:
+      - main
+      - refactored-template
 
 jobs:
   build:
