@@ -35,14 +35,14 @@ html_theme = 'sphinx_rtd_theme'
 epub_show_urls = 'footnote'
 
 # All the existing imports here
-# import os
-# import subprocess
-# import packaging.version
-# from pallets_sphinx_themes import get_version
-# from pallets_sphinx_themes import ProjectLink
-# from sphinx.ext.autodoc import ClassDocumenter
-# from sphinx.application import Sphinx
-# from sphinx.util.docstrings import prepare_docstring
+import os
+import subprocess
+import packaging.version
+from pallets_sphinx_themes import get_version
+from pallets_sphinx_themes import ProjectLink
+from sphinx.ext.autodoc import ClassDocumenter
+from sphinx.application import Sphinx
+from sphinx.util.docstrings import prepare_docstring
 
 # Project --------------------------------------------------------------
 
