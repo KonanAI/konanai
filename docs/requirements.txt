@@ -1,0 +1,5 @@
+sphinx
+pallets_sphinx_themes
+sphinxcontrib-napoleon
+sphinxcontrib-log-cabinet
+sphinx_issues
