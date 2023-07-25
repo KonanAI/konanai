@@ -1,4 +1,4 @@
--e ..
+-e .
 sphinx
 pallets_sphinx_themes
 sphinxcontrib-napoleon
