@@ -112,7 +112,7 @@ def run_postprocess(app, exception):
     script_path = os.path.join(os.path.dirname(__file__), "postprocess.py")
     
     # The path to the 'index.html' file
-    html_file_path = os.path.join(app.outdir,"..", "..", "_readthedocs", "html", "index.html")
+    html_file_path = os.path.join(app.outdir, "index.html")
 
     # Call the postprocess script on the 'index.html' file
     subprocess.check_call([sys.executable, script_path, html_file_path])
