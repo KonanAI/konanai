@@ -18,5 +18,3 @@ This package is subdivided into four integral sub-modules:
               including capabilities for conducting sophisticated ablation
               studies.
 """
-
-__version__ = "0.0.1"
