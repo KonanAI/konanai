@@ -2,12 +2,12 @@
 
 # -- Project information
 
-project = 'Lumache'
-copyright = '2021, Graziella'
-author = 'Graziella'
+# project = 'Lumache'
+# copyright = '2021, Graziella'
+# author = 'Graziella'
 
-release = '0.1'
-version = '0.1.0'
+# release = '0.1'
+# version = '0.1.0'
 
 # -- General configuration
 
@@ -34,22 +34,22 @@ html_theme = 'sphinx_rtd_theme'
 # -- Options for EPUB output
 epub_show_urls = 'footnote'
 
-# # All the existing imports here
-# import os
-# import subprocess
-# import packaging.version
-# from pallets_sphinx_themes import get_version
-# from pallets_sphinx_themes import ProjectLink
-# from sphinx.ext.autodoc import ClassDocumenter
-# from sphinx.application import Sphinx
-# from sphinx.util.docstrings import prepare_docstring
+# All the existing imports here
+import os
+import subprocess
+import packaging.version
+from pallets_sphinx_themes import get_version
+from pallets_sphinx_themes import ProjectLink
+from sphinx.ext.autodoc import ClassDocumenter
+from sphinx.application import Sphinx
+from sphinx.util.docstrings import prepare_docstring
 
-# # Project --------------------------------------------------------------
+# Project --------------------------------------------------------------
 
-# project = "konanai"
-# copyright = "2023 KonanAI LLC"
-# author = "Joseph Konan"
-# release, version = get_version("konanai")
+project = "konanai"
+copyright = "2023 KonanAI LLC"
+author = "Joseph Konan"
+release, version = get_version("konanai")
 
 # # General --------------------------------------------------------------
 
