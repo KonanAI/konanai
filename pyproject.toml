@@ -23,29 +23,29 @@ requires-python = ">=3.10"
 
 # dependencies = []
 
-# dependencies = [
-#     "argparse",
-#     "datasets",
-#     "g2pM",
-#     "g2p_en",
-#     "jiwer",
-#     "librosa",
-#     "matplotlib",
-#     "numpy",
-#     "opensmile",
-#     "pandas",
-#     "praatio",
-#     "scikit-learn",
-#     "scipy",
-#     "soundfile",
-#     "tensorflow",
-#     "torch",
-#     "torchaudio",
-#     "transformers",
-#     "tqdm",
-#     "typing-extensions",
-#     "umap-learn"
-# ]
+dependencies = [
+    "argparse",
+    "datasets",
+    "g2pM",
+    "g2p_en",
+    "jiwer",
+    "librosa",
+    "matplotlib",
+    "numpy",
+    "opensmile",
+    "pandas",
+    "praatio",
+    "scikit-learn",
+    "scipy",
+    "soundfile",
+    "tensorflow",
+    "torch",
+    "torchaudio",
+    "transformers",
+    "tqdm",
+    "typing-extensions",
+    "umap-learn"
+]
 
 
 # [tool.flit.module]
