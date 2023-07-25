@@ -24,11 +24,11 @@ Attributes:
 # pylint: disable=wrong-import-position
 
 import sys
-import os
+from pathlib import Path
 
-charsiu_path = os.path.join(os.path.dirname(__file__), "lib", "charsiu", "src")
-print("charsiu_path", charsiu_path)
-sys.path.append(charsiu_path)
+charsiu_path = Path(__file__).resolve().parent / "lib" / "charsiu" / "src"
+(charsiu_path / "__init__.py").touch(exist_ok=True)
+sys.path.append(str(charsiu_path))
 
 import Charsiu
 
