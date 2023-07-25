@@ -24,28 +24,31 @@ requires-python = ">=3.10"
 # # [project.scripts]
 # # add your console scripts here
 
-[project.dependencies]
-# tensorflow = "*"
-# torch = "*"
-# torchaudio = "*"
-# numpy = "*"
-# matplotlib = "*"
-# scikit-learn = "*"
-# umap-learn = "*"
-# pandas = "*"
-# opensmile = "*"
-# transformers = "*"
-# soundfile = "*"
-# librosa = "*"
-# argparse = "*"
-# tqdm = "*"
-# datasets = "*"
-# g2p_en = "*"
-# jiwer = "*"
-# praatio = "*"
-# scipy = "*"
-# g2pM = "*"
-# typing-extensions = "*"
+[project]
+name = "konanai"
+dependencies = [
+    "argparse",
+    "datasets",
+    "g2pM",
+    "g2p_en",
+    "jiwer",
+    "librosa",
+    "matplotlib",
+    "numpy",
+    "opensmile",
+    "pandas",
+    "praatio",
+    "scikit-learn",
+    "scipy",
+    "soundfile",
+    "tensorflow",
+    "torch",
+    "torchaudio",
+    "transformers",
+    "tqdm",
+    "typing-extensions",
+    "umap-learn"
+]
 
 
 # [tool.flit.module]
