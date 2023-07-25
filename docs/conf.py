@@ -16,10 +16,10 @@ project = "konanai"
 copyright = "2023 KonanAI LLC"
 author = "Joseph Konan"
 
-release = '0.1'
-version = '0.1.0'
+# release = '0.1'
+# version = '0.1.0'
 
-# release, version = get_version("konanai")
+release, version = get_version("konanai")
 
 # General --------------------------------------------------------------
 
