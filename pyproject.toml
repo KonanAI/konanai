@@ -5,4 +5,4 @@ build-backend = "flit_core.buildapi"
 [project]
 name = "konanai"
 authors = [{name = "Joseph Konan", email = "konan@konanai.com"}]
-dynamic = ["version", "description"]
+dynamic = ["0.0.0", "placeholder"]
