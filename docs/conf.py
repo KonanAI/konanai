@@ -114,6 +114,7 @@ def run_postprocess(app, exception):
     # The path to the 'index.html' file
     html_file_path = os.path.join(app.outdir, "_readthedocs", "html", "index.html")
 
+    print("pwd", os.listdir())
     print(f"Running postprocess on: {html_file_path}")  # print statement
 
     # Call the postprocess script on the 'index.html' file
