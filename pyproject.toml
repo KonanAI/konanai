@@ -7,7 +7,7 @@ name = "konanai"
 version = "0.0.1"
 description = "Konanai is a comprehensive Python package for speech analysis and modeling. It facilitates acoustic, phonetic, and linguistic processing, alignment, visualization, and estimation. The package is enhanced with various external utilities, including UMAP models, audio feature extraction tools, and forced alignment methods."
 authors = [{name = "Joseph Konan", email = "konan@konanai.com"}]
-readme = "README.md"  # if you have a readme file
+readme = "README.rst"  # if you have a readme file
 license = {file = "LICENSE"}  # if you have a license file
 homepage = "https://github.com/KonanAI-LLC/konanai"
 classifiers = [
