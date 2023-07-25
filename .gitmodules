@@ -1,0 +1,3 @@
+[submodule "src/konanai/externals/lib/charsiu"]
+	path = src/konanai/externals/lib/charsiu
+	url = https://github.com/lingjzhu/charsiu.git
