@@ -22,31 +22,31 @@ classifiers = [
 requires-python = ">=3.10"
 
 # # [project.scripts]
-# # # add your console scripts here
+# # add your console scripts here
 
-# [project.dependencies]
-# tensorflow = "*"
-# torch = "*"
-# torchaudio = "*"
-# numpy = "*"
-# matplotlib = "*"
-# scikit-learn = "*"
-# umap-learn = "*"
-# pandas = "*"
-# opensmile = "*"
-# transformers = "*"
-# soundfile = "*"
-# librosa = "*"
-# argparse = "*"
-# tqdm = "*"
-# datasets = "*"
-# g2p_en = "*"
-# jiwer = "*"
-# praatio = "*"
-# scipy = "*"
-# g2pM = "*"
-# typing-extensions = "*"
+[project.dependencies]
+tensorflow = "*"
+torch = "*"
+torchaudio = "*"
+numpy = "*"
+matplotlib = "*"
+scikit-learn = "*"
+umap-learn = "*"
+pandas = "*"
+opensmile = "*"
+transformers = "*"
+soundfile = "*"
+librosa = "*"
+argparse = "*"
+tqdm = "*"
+datasets = "*"
+g2p_en = "*"
+jiwer = "*"
+praatio = "*"
+scipy = "*"
+g2pM = "*"
+typing-extensions = "*"
 
 
-[tool.flit.module]
-konanai = "src/konanai"
+# [tool.flit.module]
+# konanai = "src/konanai"
