@@ -4,4 +4,4 @@ sphinxcontrib-napoleon
 sphinxcontrib-log-cabinet
 sphinx_issues
 sphinx_tabs
--e .
+-e ../.
