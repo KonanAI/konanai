@@ -103,8 +103,8 @@ def github_link(name, rawtext, text, lineno, inliner, options=None, content=None
     node = reference(rawtext, words, refuri=url, **options)
     return [node], []
 
-def setup(app: Sphinx):
-    app.add_role("gh", github_link)
+# def setup(app: Sphinx):
+#     app.add_role("gh", github_link)
 #     app.connect('build-finished', run_postprocess)
 
 # def run_postprocess(app, exception):
