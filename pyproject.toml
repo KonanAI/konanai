@@ -21,11 +21,6 @@ classifiers = [
 ]
 requires-python = ">=3.10"
 
-# # [project.scripts]
-# # add your console scripts here
-
-[project]
-name = "konanai"
 dependencies = [
     "argparse",
     "datasets",
