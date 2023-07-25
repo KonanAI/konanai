@@ -98,11 +98,11 @@ html_show_sourcelink = False
 
 exclude_patterns = ['**/konanai/src/konanai/externals/lib']
 
-LaTeX ----------------------------------------------------------------
+# LaTeX ----------------------------------------------------------------
 
 latex_documents = [(master_doc, f"konanai-{version}.tex", html_title, author, "manual")]
 
-Local Extensions -----------------------------------------------------
+# Local Extensions -----------------------------------------------------
 
 def github_link(name, rawtext, text, lineno, inliner, options=None, content=None):
     app = inliner.document.settings.env.app
