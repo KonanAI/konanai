@@ -25,7 +25,7 @@ requires-python = ">=3.10"
 # # add your console scripts here
 
 [project.dependencies]
-tensorflow = "*"
+# tensorflow = "*"
 # torch = "*"
 # torchaudio = "*"
 # numpy = "*"
