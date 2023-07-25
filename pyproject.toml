@@ -9,7 +9,7 @@ description = "Konanai is a comprehensive Python package for speech analysis and
 authors = [{name = "Joseph Konan", email = "konan@konanai.com"}]
 readme = "README.rst"  # if you have a readme file
 license = {file = "LICENSE"}  # if you have a license file
-homepage = "https://github.com/KonanAI-LLC/konanai"
+urls = {homepage = "https://github.com/KonanAI-LLC/konanai"}
 classifiers = [
     "Development Status :: 3 - Alpha",
     "Intended Audience :: Developers",
@@ -25,27 +25,29 @@ requires-python = ">=3.10"
 # add your console scripts here
 
 [project.dependencies]
-tensorflow = "*"
-torch = "*"
-torchaudio = "*"
-numpy = "*"
-matplotlib = "*"
-scikit-learn = "*"
-umap-learn = "*"
-pandas = "*"
-opensmile = "*"
-transformers = "*"
-soundfile = "*"
-librosa = "*"
-argparse = "*"
-tqdm = "*"
-datasets = "*"
-g2p_en = "*"
-jiwer = "*"
-praatio = "*"
-scipy = "*"
-g2pM = "*"
-typing-extensions = "*"
+dependencies = [
+    "tensorflow",
+    "torch",
+    "torchaudio",
+    "numpy",
+    "matplotlib",
+    "scikit-learn",
+    "umap-learn",
+    "pandas",
+    "opensmile",
+    "transformers",
+    "soundfile",
+    "librosa",
+    "argparse",
+    "tqdm",
+    "datasets",
+    "g2p_en",
+    "jiwer",
+    "praatio",
+    "scipy",
+    "g2pM",
+    "typing-extensions",
+]
 
 [project.optional-dependencies]
 
