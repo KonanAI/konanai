@@ -10,7 +10,7 @@ This package is subdivided into four integral sub-modules:
              generation of various data representations.
 - `externals`: This module provides user-friendly wrappers for integrating
                cutting-edge external tools, such as UMAP, OpenSMILE, and
-               CharSIU, enhancing the extensibility of `konanai`.
+               Charsiu, enhancing the extensibility of `konanai`.
 - `models`: This module hosts sophisticated acoustic and phonetic estimators,
             providing the foundation for advanced machine learning
             applications.
