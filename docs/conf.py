@@ -105,15 +105,15 @@ def github_link(name, rawtext, text, lineno, inliner, options=None, content=None
 
 def setup(app: Sphinx):
     app.add_role("gh", github_link)
-    app.connect('build-finished', run_postprocess)
+#     app.connect('build-finished', run_postprocess)
 
-def run_postprocess(app, exception):
-    # The script and html directory paths
-    script_path = os.path.join(os.path.dirname(__file__), "postprocess.py")
+# def run_postprocess(app, exception):
+#     # The script and html directory paths
+#     script_path = os.path.join(os.path.dirname(__file__), "postprocess.py")
     
-    # The path to the 'index.html' file
-    html_file_path = os.path.join(app.outdir, "index.html")
+#     # The path to the 'index.html' file
+#     html_file_path = os.path.join(app.outdir, "index.html")
     
-    # Call the postprocess script on the 'index.html' file
-    subprocess.check_call([sys.executable, script_path, html_file_path])
+#     # Call the postprocess script on the 'index.html' file
+#     subprocess.check_call([sys.executable, script_path, html_file_path])
 
