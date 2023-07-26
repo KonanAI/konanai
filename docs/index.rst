@@ -1,5 +1,5 @@
 
-Konanai API
+KonanAI API
 ===========
 
 .. module:: konanai
