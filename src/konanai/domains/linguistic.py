@@ -87,91 +87,136 @@ class Phoneme(LinguisticUnit):
     @classmethod
     def coronals(cls) -> List[str]:
         """
-        Retrieves phonemes belonging to the coronal group,
-        characterized by the blade of the tongue being used
-        for articulation.
+        Retrieve phonemes belonging to the coronal group, characterized by the blade of the tongue 
+        being used for articulation.
 
-        Returns:
-            List[str]: Phonemes in the coronal group.
+        Returns
+        -------
+        List[str]
+            A list of phonemes in the coronal group.
+
+        Example
+        -------
+        >>> coronal_phonemes = Phoneme.coronals()
+        >>> print(coronal_phonemes)
         """
         pass
 
     @classmethod
     def dorsals(cls) -> List[str]:
         """
-        Retrieves phonemes belonging to the dorsal group,
-        characterized by the body of the tongue being used
-        for articulation.
+        Retrieve phonemes belonging to the dorsal group, characterized by the body of the tongue 
+        being used for articulation.
 
-        Returns:
-            List[str]: Phonemes in the dorsal group.
+        Returns
+        -------
+        List[str]
+            A list of phonemes in the dorsal group.
+
+        Example
+        -------
+        >>> dorsal_phonemes = Phoneme.dorsals()
+        >>> print(dorsal_phonemes)
         """
         pass
 
     @classmethod
     def labials(cls) -> List[str]:
         """
-        Retrieves phonemes belonging to the labial group,
-        characterized by the lips being used for articulation.
+        Retrieve phonemes belonging to the labial group, characterized by the lips being used 
+        for articulation.
 
-        Returns:
-            List[str]: Phonemes in the labial group.
+        Returns
+        -------
+        List[str]
+            A list of phonemes in the labial group.
+
+        Example
+        -------
+        >>> labial_phonemes = Phoneme.labials()
+        >>> print(labial_phonemes)
         """
         pass
 
     @classmethod
     def laryngeals(cls) -> List[str]:
         """
-        Retrieves phonemes belonging to the laryngeal group,
-        characterized by the larynx being used for articulation.
+        Retrieve phonemes belonging to the laryngeal group, characterized by the larynx being 
+        used for articulation.
 
-        Returns:
-            List[str]: Phonemes in the laryngeal group.
+        Returns
+        -------
+        List[str]
+            A list of phonemes in the laryngeal group.
+
+        Example
+        -------
+        >>> laryngeal_phonemes = Phoneme.laryngeals()
+        >>> print(laryngeal_phonemes)
         """
         pass
 
     @classmethod
     def silent(cls) -> List[str]:
         """
-        Retrieves silent phonemes, which do not produce audible
-        sound but are part of the speech structure.
+        Retrieve silent phonemes, which do not produce audible sound but are part of the speech structure.
 
-        Returns:
-            List[str]: Silent phonemes.
+        Returns
+        -------
+        List[str]
+            A list of silent phonemes.
+
+        Example
+        -------
+        >>> silent_phonemes = Phoneme.silent()
+        >>> print(silent_phonemes)
         """
         pass
 
     @classmethod
     def special(cls) -> List[str]:
         """
-        Retrieves special phonemes, that have unique articulatory
-        properties or functions in the language system.
+        Retrieve special phonemes that have unique articulatory properties or functions in the language system.
 
-        Returns:
-            List[str]: Special phonemes.
+        Returns
+        -------
+        List[str]
+            A list of special phonemes.
+
+        Example
+        -------
+        >>> special_phonemes = Phoneme.special()
+        >>> print(special_phonemes)
         """
         pass
 
     @property
     def duration(self) -> Time:
         """
-        Provides the duration of the Phoneme, calculated as the
-        difference between the end and start times of the Phoneme.
+        Calculate the duration of the Phoneme, which is the difference between the end and start times.
 
-        Returns:
-            Time: The duration of the Phoneme.
+        Returns
+        -------
+        Time
+            The duration of the Phoneme.
+
+        Example
+        -------
+        >>> p = Phoneme(start_time, end_time, "a", ARTICULATORY_CLASSIFICATION.VOWEL)
+        >>> print(p.duration)
         """
         pass
-
+        
 
 class Word(LinguisticUnit):
     """
-    Represents a Word, a fundamental unit of language, that inherits
-    from the LinguisticUnit class.
-
-    Each Word object encapsulates the start and end times, the actual
-    word content, and methods to perform various operations such as
+    This class represents a Word, a fundamental unit of language. It extends the LinguisticUnit base class
+    and includes the start and end times, the actual word content, and methods to perform operations such as
     syllabification and duration calculation.
+
+    Example
+    -------
+    >>> w = Word(start_time, end_time, "hello")
     """
 
     @classmethod
@@ -180,26 +225,38 @@ class Word(LinguisticUnit):
         phonemes: Optional[List[str]] = None,
     ) -> List[List[str]]:
         """
-        Breaks a list of phonemes into constituent syllables according
-        to linguistic rules.
+        Break a list of phonemes into constituent syllables according to linguistic rules.
 
-        Args:
-            phonemes (Optional[List[str]]): List of phonemes to be
-                syllabified.
+        Parameters
+        ----------
+        phonemes : Optional[List[str]]
+            A list of phonemes to be syllabified. If not provided, it defaults to None.
 
-        Returns:
-            List[List[str]]: Nested list where each inner list represents
-                a syllable, composed of phonemes.
+        Returns
+        -------
+        List[List[str]]
+            A nested list where each inner list represents a syllable composed of phonemes.
+
+        Example
+        -------
+        >>> syllables = Word.syllabify(["h", "e", "l", "l", "o"])
+        >>> print(syllables)
         """
         pass
 
     @property
     def duration(self) -> Time:
         """
-        Computes the duration of the word by subtracting the start time
-        from the end time.
+        Calculate the duration of the Word, computed as the difference between the end and start times.
 
-        Returns:
-            Time: The duration of the word.
+        Returns
+        -------
+        Time
+            The duration of the Word.
+
+        Example
+        -------
+        >>> w = Word(start_time, end_time, "hello")
+        >>> print(w.duration)
         """
         pass
